@@ -60,6 +60,77 @@ date_max <- max(psa_data$date, na.rm = TRUE)
 
 fmt_php <- label_currency(prefix = "\u20b1", accuracy = 0.01)
 
+# Minimum number of monthly observations we're willing to forecast from
+MIN_FORECAST_OBS <- 6
+
+# Forecasts a single province/commodity series using only base-R stats
+# (Holt-Winters, falling back to a linear trend). No extra packages, so this
+# stays fast to install and fast to run.
+#
+# d       : data frame with columns date, price for ONE province+commodity
+# horizon : number of months to forecast ahead
+# method  : "auto" (Holt-Winters, falls back automatically) or "linear"
+forecast_series <- function(d, horizon = 12, method = "auto") {
+
+  d <- d |> filter(!is.na(price)) |> arrange(date)
+  if (nrow(d) < MIN_FORECAST_OBS) {
+    return(list(ok = FALSE, reason = "Not enough historical observations for this series."))
+  }
+
+  # build a complete, gap-free monthly sequence and linearly interpolate
+  # any missing months so the time series has a consistent frequency
+  full_dates <- seq(min(d$date), max(d$date), by = "month")
+  full_df <- data.frame(date = full_dates) |> left_join(d, by = "date")
+  if (anyNA(full_df$price)) {
+    full_df$price <- approx(
+      x = as.numeric(full_df$date), y = full_df$price,
+      xout = as.numeric(full_df$date), rule = 2
+    )$y
+  }
+
+  n <- nrow(full_df)
+  ts_data <- ts(full_df$price,
+                start = c(year(full_dates[1]), month(full_dates[1])),
+                frequency = 12)
+  forecast_dates <- seq(full_dates[n] %m+% months(1), by = "month", length.out = horizon)
+
+  fit_linear <- function() {
+    idx <- seq_len(n)
+    lm_fit <- lm(price ~ idx, data = data.frame(price = as.numeric(ts_data), idx = idx))
+    pred <- predict(lm_fit, newdata = data.frame(idx = (n + 1):(n + horizon)),
+                     interval = "prediction", level = 0.95)
+    list(ok = TRUE, method_used = "Linear trend (fallback)",
+         history = full_df,
+         forecast = data.frame(date = forecast_dates, fit = pred[, "fit"],
+                                lwr = pred[, "lwr"], upr = pred[, "upr"]))
+  }
+
+  if (identical(method, "linear")) return(fit_linear())
+
+  hw <- tryCatch({
+    if (n >= 25) HoltWinters(ts_data) else stop("series too short for seasonal fit")
+  }, error = function(e) NULL)
+  method_used <- "Holt-Winters (trend + seasonality)"
+
+  if (is.null(hw)) {
+    hw <- tryCatch(HoltWinters(ts_data, gamma = FALSE), error = function(e) NULL)
+    method_used <- "Holt-Winters (trend only)"
+  }
+
+  if (is.null(hw)) return(fit_linear())
+
+  pred <- tryCatch(
+    predict(hw, n.ahead = horizon, prediction.interval = TRUE, level = 0.95),
+    error = function(e) NULL
+  )
+  if (is.null(pred)) return(fit_linear())
+
+  list(ok = TRUE, method_used = method_used,
+       history = full_df,
+       forecast = data.frame(date = forecast_dates, fit = as.numeric(pred[, "fit"]),
+                              lwr = as.numeric(pred[, "lwr"]), upr = as.numeric(pred[, "upr"])))
+}
+
 # A ggplot theme shared by every chart so the dashboard reads as one voice
 theme_psa <- function(base_size = 12) {
   theme_minimal(base_size = base_size, base_family = "Inter") %+replace%
@@ -199,6 +270,50 @@ ui <- page_navbar(
   ),
 
   nav_panel(
+    title = "Forecast",
+    icon = bs_icon("graph-up-arrow"),
+    layout_columns(
+      col_widths = c(3, 9),
+      card(
+        card_header("Forecast settings"),
+        selectInput("fc_province", "Province / City", choices = NULL),
+        selectInput("fc_commodity", "Commodity", choices = NULL),
+        sliderInput("fc_horizon", "Months to forecast ahead", min = 3, max = 36, value = 12, step = 1),
+        radioButtons(
+          "fc_method", "Model",
+          choiceNames = list("Auto (Holt-Winters, recommended)", "Simple linear trend"),
+          choiceValues = list("auto", "linear")
+        ),
+        downloadButton("download_forecast", "Download forecast (.csv)", class = "btn-outline-secondary w-100")
+      ),
+      div(
+        layout_columns(
+          col_widths = c(4, 4, 4),
+          value_box(title = "Model used", value = textOutput("fc_method_used"),
+                    showcase = bs_icon("cpu"), theme = "primary"),
+          value_box(title = "Horizon", value = textOutput("fc_horizon_label"),
+                    showcase = bs_icon("calendar-range"), theme = "secondary"),
+          value_box(title = "Projected change", value = textOutput("fc_change"),
+                    showcase = bs_icon("graph-up"), theme = "success")
+        ),
+        card(
+          card_header("History and forecast"),
+          plotlyOutput("fc_plot", height = "400px"),
+          card_footer(
+            class = "text-muted small",
+            "Forecast is a statistical extrapolation of the historical trend and seasonal pattern. ",
+            "It does not account for shocks such as disease outbreaks, feed cost spikes, or policy changes \u2014 treat it as a planning reference, not a guarantee."
+          )
+        ),
+        card(
+          card_header("Forecast values"),
+          DTOutput("fc_table")
+        )
+      )
+    )
+  ),
+
+  nav_panel(
     title = "Data",
     icon = bs_icon("table"),
     card(
@@ -333,6 +448,91 @@ server <- function(input, output, session) {
   output$download_csv <- downloadHandler(
     filename = function() paste0("psa_egg_prices_filtered_", Sys.Date(), ".csv"),
     content = function(file) write_csv(filtered(), file)
+  )
+
+  # ---- Forecast tab -------------------------------------------------------
+
+  # only offer province/commodity combos with enough history to forecast
+  forecastable <- psa_data |>
+    filter(!is.na(price)) |>
+    count(province, commodity) |>
+    filter(n >= MIN_FORECAST_OBS)
+
+  updateSelectInput(session, "fc_province",
+                     choices = sort(unique(forecastable$province)))
+
+  observeEvent(input$fc_province, {
+    avail <- forecastable |> filter(province == input$fc_province) |> pull(commodity) |> sort()
+    updateSelectInput(session, "fc_commodity", choices = avail)
+  }, ignoreInit = FALSE)
+
+  fc_result <- reactive({
+    req(input$fc_province, input$fc_commodity)
+    d <- psa_data |> filter(province == input$fc_province, commodity == input$fc_commodity)
+    forecast_series(d, horizon = input$fc_horizon, method = input$fc_method)
+  })
+
+  output$fc_method_used <- renderText({
+    r <- fc_result()
+    if (!isTRUE(r$ok)) return("\u2014")
+    r$method_used
+  })
+
+  output$fc_horizon_label <- renderText({
+    paste(input$fc_horizon, "months")
+  })
+
+  output$fc_change <- renderText({
+    r <- fc_result()
+    if (!isTRUE(r$ok)) return("\u2014")
+    last_actual <- tail(r$history$price, 1)
+    last_forecast <- tail(r$forecast$fit, 1)
+    pct <- (last_forecast - last_actual) / last_actual * 100
+    arrow <- if (pct >= 0) "\u25b2" else "\u25bc"
+    paste0(arrow, " ", number(abs(pct), accuracy = 0.1), "%")
+  })
+
+  output$fc_plot <- renderPlotly({
+    r <- fc_result()
+    validate(need(isTRUE(r$ok), if (!is.null(r$reason)) r$reason else "Not enough data to forecast this series."))
+
+    hist_df <- r$history |> mutate(kind = "History")
+    fc_df   <- r$forecast |> rename(price = fit) |> mutate(kind = "Forecast")
+
+    p <- ggplot() +
+      geom_ribbon(data = fc_df, aes(x = date, ymin = lwr, ymax = upr),
+                  fill = "#C98A1F", alpha = 0.15) +
+      geom_line(data = hist_df, aes(x = date, y = price), color = "#1F5C6B", linewidth = 0.6) +
+      geom_line(data = fc_df, aes(x = date, y = price), color = "#C98A1F",
+                linewidth = 0.7, linetype = "dashed") +
+      labs(x = NULL, y = "Price (PHP)") +
+      theme_psa()
+
+    ggplotly(p) |> layout(showlegend = FALSE)
+  })
+
+  output$fc_table <- renderDT({
+    r <- fc_result()
+    validate(need(isTRUE(r$ok), if (!is.null(r$reason)) r$reason else "Not enough data to forecast this series."))
+    r$forecast |>
+      mutate(date = format(date, "%Y-%m")) |>
+      datatable(
+        options = list(pageLength = 12, dom = "ftip"),
+        rownames = FALSE,
+        colnames = c("Period", "Forecast", "Lower 95% CI", "Upper 95% CI")
+      ) |>
+      formatCurrency(c("fit", "lwr", "upr"), currency = "\u20b1", digits = 2)
+  })
+
+  output$download_forecast <- downloadHandler(
+    filename = function() {
+      paste0("psa_egg_forecast_", input$fc_province, "_", input$fc_commodity, "_", Sys.Date(), ".csv")
+    },
+    content = function(file) {
+      r <- fc_result()
+      req(isTRUE(r$ok))
+      write_csv(r$forecast, file)
+    }
   )
 }
 
