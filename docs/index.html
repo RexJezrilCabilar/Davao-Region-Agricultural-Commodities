@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rice Retail Price Monitor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <p class="kicker">🌾 Rice Retail Price Monitor</p>
+    <p class="hero-number" id="heroPrice">—</p>
+    <p class="hero-caption" id="heroCaption">average retail price, well-milled rice</p>
+    <p class="checked" id="checked"></p>
+  </header>
+
+  <p class="notice" id="sampleNotice" hidden>
+    These are placeholder figures so the page has something to show. They'll be replaced the first time the scheduled job runs.
+  </p>
+
+  <hr class="rule">
+
+  <section class="stat-strip" id="statStrip"></section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Price by region</h2>
+    <div id="chart" class="chart"></div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="table-head">
+      <h2>Full breakdown</h2>
+      <input type="search" id="searchBox" placeholder="Filter by region">
+    </div>
+    <div class="table-scroll">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th data-key="Geolocation" tabindex="0">Region</th>
+            <th data-key="Price_PHP" class="num" tabindex="0">Price (₱/kg)</th>
+            <th data-key="Year" tabindex="0">Year</th>
+            <th data-key="Month" tabindex="0">Month</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <p>Data comes from the PSA OpenSTAT database (table 0042M4ARN01) for well-milled rice. A scheduled job checks for new figures and refreshes this page automatically. See the <a href="https://openstat.psa.gov.ph" target="_blank" rel="noopener">source table</a> for the full series.</p>
+  </footer>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>

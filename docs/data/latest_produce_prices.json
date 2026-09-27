@@ -1,0 +1,9 @@
+[
+  {"Geolocation": "PHILIPPINES", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 51.85, "Year": 2026, "Month": "August"},
+  {"Geolocation": "National Capital Region (NCR)", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 54.10, "Year": 2026, "Month": "August"},
+  {"Geolocation": "Cordillera Administrative Region (CAR)", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 52.40, "Year": 2026, "Month": "August"},
+  {"Geolocation": "Region III - Central Luzon", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 49.75, "Year": 2026, "Month": "July"},
+  {"Geolocation": "Region VI - Western Visayas", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 48.90, "Year": 2026, "Month": "August"},
+  {"Geolocation": "Region XI - Davao Region", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 50.20, "Year": 2026, "Month": "August"},
+  {"Geolocation": "BARMM", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 53.60, "Year": 2026, "Month": "July"}
+]
