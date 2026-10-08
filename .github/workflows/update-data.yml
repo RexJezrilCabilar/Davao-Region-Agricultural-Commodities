@@ -1,0 +1,38 @@
+name: Update rice price data
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # 22:00 UTC = 06:00 Philippine Time (UTC+8), every day
+  workflow_dispatch: {}    # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write          # needed so the workflow can commit the refreshed data
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch latest PSA prices
+        run: python scripts/fetch_prices.py
+
+      - name: Commit updated data
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: update rice price data [skip ci]"
+          file_pattern: "docs/data/*"

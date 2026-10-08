@@ -1,9 +1,821 @@
 [
-  {"Geolocation": "PHILIPPINES", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 51.85, "Year": 2026, "Month": "August"},
-  {"Geolocation": "National Capital Region (NCR)", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 54.10, "Year": 2026, "Month": "August"},
-  {"Geolocation": "Cordillera Administrative Region (CAR)", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 52.40, "Year": 2026, "Month": "August"},
-  {"Geolocation": "Region III - Central Luzon", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 49.75, "Year": 2026, "Month": "July"},
-  {"Geolocation": "Region VI - Western Visayas", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 48.90, "Year": 2026, "Month": "August"},
-  {"Geolocation": "Region XI - Davao Region", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 50.20, "Year": 2026, "Month": "August"},
-  {"Geolocation": "BARMM", "Commodity": "RICE, WELL-MILLED, 1 KG", "Price_PHP": 53.60, "Year": 2026, "Month": "July"}
+  {
+    "Geolocation":"....Abra",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.38,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Agusan del Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.58,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Agusan del Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.31,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Aklan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.06,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Albay",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.87,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Antique",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.96,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Apayao",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":47.68,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Aurora",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.41,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Basilan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.31,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Bataan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.39,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Batanes",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":69.06,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Batangas",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.08,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Benguet",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.25,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Biliran",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.89,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Bohol",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.73,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Bukidnon",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.22,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Bulacan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.41,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Cagayan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":48.47,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Camarines Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.84,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Camarines Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.42,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Camiguin",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.7,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Capiz",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.79,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Catanduanes",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.85,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Cavite",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.36,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Cebu",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.12,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Angeles",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.57,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Bacolod",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":62.72,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Baguio",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.64,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Butuan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.12,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Cagayan De Oro",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":61.49,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Cebu",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":63.56,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Cotabato",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.92,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Davao",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":62.06,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of General Santos",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.92,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Iligan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.75,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Iloilo",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.77,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Isabela",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.93,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Lapu-lapu",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":62.11,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Lucena",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.25,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Mandaue",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.41,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Olongapo",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.94,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Puerto Princesa",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":64.67,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....City of Tacloban",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.92,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Cotabato (North Cotabato)",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.33,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Davao Occidental",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.75,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Davao Oriental",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.63,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Davao del Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.32,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Davao del Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":59.17,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Dinagat Islands",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":59.98,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Eastern Samar",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.9,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Guimaras",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":60.33,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Ifugao",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.29,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Ilocos Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":50.59,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Ilocos Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":49.65,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Iloilo",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.84,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Isabela",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.55,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Kalinga",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":50.63,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....La Union",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.98,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Laguna",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.68,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Lanao del Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.73,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Lanao del Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":60.27,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Leyte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":61.11,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Maguindanao",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.88,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Marinduque",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.89,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Masbate",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.35,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Misamis Occidental",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.78,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Misamis Oriental",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":61.44,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Mountain Province",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.75,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Negros Occidental",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.3,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Negros Oriental",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.75,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Northern Samar",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.0,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Nueva Ecija",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":48.78,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Nueva Vizcaya",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":50.38,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Occidental Mindoro",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.29,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Oriental Mindoro",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":50.93,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Palawan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.25,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Pampanga",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.07,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Pangasinan",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.19,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Quezon",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.38,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Quirino",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.15,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Rizal",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.81,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Romblon",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.29,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Samar",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.04,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Sarangani",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.0,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Siquijor",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":59.79,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Sorsogon",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":59.77,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....South Cotabato",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.64,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Southern Leyte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.97,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Sultan Kudarat",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.66,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Surigao del Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.83,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Surigao del Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.21,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Tarlac",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.73,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Tawi-Tawi",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":64.29,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Zambales",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.68,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Zamboanga City",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.11,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Zamboanga Sibugay",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.58,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Zamboanga del Norte",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.5,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"....Zamboanga del Sur",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.2,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..BARMM - Bangsamoro Autonomous Region in Muslim Mindanao",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.93,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..CAR - Cordillera Administrative Region",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.8,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..I - Ilocos Region",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":51.85,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..II - Cagayan Valley",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":54.32,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..III - Central Luzon",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.11,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..IV-A - CALABARZON",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.59,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..IX - Zamboanga Peninsula",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.66,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..MIMAROPA Region",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.72,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..NCR - National Capital Region",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":52.66,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..Negros Island Region (NIR)",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.14,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..V - Bicol Region",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.68,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..VI - Western Visayas",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.79,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..VII - Central Visayas",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.99,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..VIII - Eastern Visayas",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":57.69,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..X - Northern Mindanao",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.16,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..XI - Davao Region",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":58.79,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..XII - SOCCSKSARGEN",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":53.91,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"..XIII - Caraga",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":56.51,
+    "Year":2026,
+    "Month":"September"
+  },
+  {
+    "Geolocation":"Philippines",
+    "Commodity":"RICE, WELL-MILLED, 1 KG",
+    "Price_PHP":55.68,
+    "Year":2026,
+    "Month":"September"
+  }
 ]
